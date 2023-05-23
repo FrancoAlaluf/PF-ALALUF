@@ -1,0 +1,11 @@
+.contenedor-contacto {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: "tmenu"
+                         "contenido"
+                         "footer";
+    .grid-contenido {
+        grid-area: contenido;
+    }
+}

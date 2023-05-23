@@ -1,0 +1,39 @@
+.grid-header{
+    grid-area: tmenu;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: solid 1px white;
+    .logo{
+        width: 3rem;
+    }
+
+    .nav-links{
+        ul{
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            li{
+                list-style: none;
+                a{
+                    text-decoration: none;
+                    font-size: 2rem;
+                    color: white;
+                    &:hover{
+                        color: rgb(173, 173, 173);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .grid-header{
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 5rem;
+    }
+}

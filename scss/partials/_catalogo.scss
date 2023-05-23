@@ -1,0 +1,86 @@
+.contenedor-catalogo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 15em auto 20em;
+    grid-template-areas:    "tmenu      tmenu"
+                            "contenido  contenido"
+                            "footer     footer";
+
+    .cont-catalogo{
+        grid-area: contenido;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:    "img1"
+                                "img2";
+        justify-items: center;
+        margin-top: 1.5rem;
+        gap: 1rem;
+    
+        .producto-1{
+            grid-area: img1;
+            width: 35rem;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            font-size: 2rem;
+            p{
+            margin: 1.5rem 0;
+            }
+            
+        }
+        .producto-2{
+            grid-area: img2;
+            width: 35rem;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            font-size: 2rem;
+            p{
+            margin: 1.5rem 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px){
+    
+    .contenedor-catalogo{
+        .cont-catalogo{
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            grid-template-areas:
+                                "img1   img1"
+                                "img2   img2";
+            
+            .producto-1{
+                flex-direction: row;
+                width: 90rem;
+                align-items: center;
+                img{
+                    margin: 0 5rem;
+                }
+                p{
+                    margin: 0 5rem;
+                }
+                
+            }
+            .producto-2{
+                flex-direction: row;
+                width: 90rem;                
+                justify-content: center;
+                align-items: center;
+                img{
+                    margin: 0 5rem;
+                }
+                p{
+                    margin: 0 5rem;
+                }
+            }
+        }
+    }
+}

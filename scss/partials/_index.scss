@@ -1,0 +1,58 @@
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 15em auto 20em;
+    grid-template-areas:    "tmenu      tmenu"
+                            "contenido  contenido"
+                            "footer     footer";
+    
+
+
+    .contenido{
+        grid-area: contenido;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:    "img"
+                                "texto";
+        justify-items: center;
+        margin-top: 1.5rem;
+        gap: 1rem;
+    
+        .img-portada{
+            grid-area: img;
+            width: 40rem;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            
+        }
+        .parrafo{
+            grid-area: texto;
+            text-align: center;
+            font-size: 2rem;
+            width: 40rem;
+            p{
+            margin: 1.5rem 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px){
+    
+    .contenedor{
+        .contenido{
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            grid-template-areas:
+                                "img  texto";
+            justify-content: center;
+            align-items: center;
+            .parrafo{
+                width: 50rem;
+                font-size: 3rem;
+            }
+        }
+    }
+}

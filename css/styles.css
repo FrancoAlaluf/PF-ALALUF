@@ -1,0 +1,473 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: black;
+  color: white;
+  font-size: 62.5%;
+}
+
+/*
+h1 {
+    font-size: 5rem;
+}
+
+h2,
+h3,
+h4 {
+    font-size: 2rem;
+}*/
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.desc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+button {
+  font-weight: 700;
+  color: #000000;
+  background-color: #e0e0e0;
+  margin: 0 1rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  font-size: 1.5rem;
+}
+button:hover {
+  background-color: #707070;
+  color: rgb(255, 255, 255);
+  transform: scale(1.1);
+}
+
+.grid-header {
+  grid-area: tmenu;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: solid 1px white;
+}
+.grid-header .logo {
+  width: 3rem;
+}
+.grid-header .nav-links ul {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.grid-header .nav-links ul li {
+  list-style: none;
+}
+.grid-header .nav-links ul li a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: white;
+}
+.grid-header .nav-links ul li a:hover {
+  color: rgb(173, 173, 173);
+}
+
+@media screen and (min-width: 1024px) {
+  .grid-header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 5rem;
+  }
+}
+.contenedor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 15em auto 20em;
+  grid-template-areas: "tmenu      tmenu" "contenido  contenido" "footer     footer";
+}
+.contenedor .contenido {
+  grid-area: contenido;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "img" "texto";
+  justify-items: center;
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+.contenedor .contenido .img-portada {
+  grid-area: img;
+  width: 40rem;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.contenedor .contenido .parrafo {
+  grid-area: texto;
+  text-align: center;
+  font-size: 2rem;
+  width: 40rem;
+}
+.contenedor .contenido .parrafo p {
+  margin: 1.5rem 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .contenedor .contenido {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "img  texto";
+    justify-content: center;
+    align-items: center;
+  }
+  .contenedor .contenido .parrafo {
+    width: 50rem;
+    font-size: 3rem;
+  }
+}
+.grid-footer {
+  grid-area: footer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem 0;
+  font-size: 1.5rem;
+  border-top: solid 1px white;
+  margin: 2rem 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .grid-footer {
+    flex-direction: row;
+    font-size: 2rem;
+  }
+  .grid-footer p {
+    margin: 0 2rem;
+  }
+}
+.contenedor-catalogo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 15em auto 20em;
+  grid-template-areas: "tmenu      tmenu" "contenido  contenido" "footer     footer";
+}
+.contenedor-catalogo .cont-catalogo {
+  grid-area: contenido;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "img1" "img2";
+  justify-items: center;
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+.contenedor-catalogo .cont-catalogo .producto-1 {
+  grid-area: img1;
+  width: 35rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+}
+.contenedor-catalogo .cont-catalogo .producto-1 p {
+  margin: 1.5rem 0;
+}
+.contenedor-catalogo .cont-catalogo .producto-2 {
+  grid-area: img2;
+  width: 35rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+}
+.contenedor-catalogo .cont-catalogo .producto-2 p {
+  margin: 1.5rem 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .contenedor-catalogo .cont-catalogo {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "img1   img1" "img2   img2";
+  }
+  .contenedor-catalogo .cont-catalogo .producto-1 {
+    flex-direction: row;
+    width: 90rem;
+    align-items: center;
+  }
+  .contenedor-catalogo .cont-catalogo .producto-1 img {
+    margin: 0 5rem;
+  }
+  .contenedor-catalogo .cont-catalogo .producto-1 p {
+    margin: 0 5rem;
+  }
+  .contenedor-catalogo .cont-catalogo .producto-2 {
+    flex-direction: row;
+    width: 90rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .contenedor-catalogo .cont-catalogo .producto-2 img {
+    margin: 0 5rem;
+  }
+  .contenedor-catalogo .cont-catalogo .producto-2 p {
+    margin: 0 5rem;
+  }
+}
+.contenedor-nos {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 15em auto 20em;
+  grid-template-areas: "tmenu" "cont-n" "footer";
+}
+.contenedor-nos .cont-nos {
+  grid-area: cont-n;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "port" "promo";
+  justify-items: center;
+}
+.contenedor-nos .cont-nos .img-portada {
+  grid-area: port;
+  width: 40rem;
+}
+.contenedor-nos .cont-nos .promocion {
+  grid-area: promo;
+  text-align: center;
+}
+.contenedor-nos .cont-nos .promocion h2 {
+  font-size: 3rem;
+}
+.contenedor-nos .cont-nos .promocion p {
+  width: 40rem;
+  margin: 2rem 0;
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .contenedor-nos {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 15em auto 20em;
+    grid-template-areas: "tmenu      tmenu" "cont-n     cont-n" "footer     footer";
+  }
+  .contenedor-nos .cont-nos {
+    grid-area: cont-n;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "port promo";
+    justify-items: center;
+    align-items: center;
+  }
+  .contenedor-nos .cont-nos .promocion {
+    grid-area: promo;
+    text-align: center;
+  }
+  .contenedor-nos .cont-nos .promocion h2 {
+    font-size: 5rem;
+  }
+  .contenedor-nos .cont-nos .promocion p {
+    width: 70rem;
+    margin: 2rem 0;
+    font-size: 2rem;
+  }
+}
+.contenedor-contacto {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr;
+  grid-template-areas: "tmenu" "contenido" "footer";
+}
+.contenedor-contacto .grid-contenido {
+  grid-area: contenido;
+}
+
+.contenido {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5em;
+}
+
+/*SOMBRA EN CONTENEDOR*/
+.contact-wrapper {
+  box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
+}
+
+.contact-wrapper > * {
+  padding: 1em;
+}
+
+.contact-form {
+  background-color: #222;
+}
+
+.contact-form FORM {
+  display: grid; /*GRILLAS*/
+  grid-template-columns: 1fr 1fr; /*DIVIDO EN COLUMNAS Y ESPECIFICO CANTIDAD CON FR*/
+}
+
+.contact-form form .block {
+  grid-column: 1/3; /*CUANTO VA A UTILIZAR*/
+}
+
+.contact-form form P {
+  margin: 0;
+  padding: 1em;
+}
+
+.contact-form form button, .contact-form form input, .contact-form form textarea {
+  width: 100%;
+  padding: 0.7em;
+  border: none; /*SE VAN LOS BORDES*/
+  background: none; /*LE QUITA EL FONDO*/
+  border-bottom: 1px solid #4e4d4d; /*FRANJA*/
+  color: #fff; /*COLOR LETRA*/
+  outline: none; /*LE QUITA LA SELEC A LA CASILLA*/
+}
+
+.contact-form form button {
+  background-color: #2e2c2d;
+  border: 0;
+  text-transform: uppercase; /*TODO EL TEXTO EN MAYUS*/
+  padding: 1em;
+}
+.contact-form form button .contact-form form button:hover,
+.contact-form form button .contact-form form button:focus {
+  background-color: #fff;
+  color: #000;
+  transition: background-color 1s ease-out; /*TRANSICION, TIEMPO DE TRANS*/
+  outline: 0;
+}
+
+.contact-info {
+  background-color: #141618;
+}
+.contact-info ul {
+  padding: 0em;
+}
+.contact-info ul li {
+  padding: 2em;
+}
+
+.contact-info h4, .contact-info ul, .contact-info p {
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+/*PANTALLAS GRANDES*/
+@media (min-width: 700px) {
+  body {
+    padding: 0 4rem;
+  }
+  .contact-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  .contact-wrapper > * {
+    padding: 2em;
+  }
+  .contact-info h4, .contact-info ul, .contact-info p {
+    padding: 1em;
+    text-align: left;
+  }
+}
+.container-carrito {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr;
+  grid-template-areas: "tmenu" "contenido" "footer";
+}
+.container-carrito .cont-carrito {
+  grid-area: contenido;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas: ".     descrip     cant       precio" "img1   descrip1    cant1      precio1" "img2   descrip2    cant2      precio2" "img3   descrip3    cant3      precio3";
+}
+.container-carrito .cont-carrito .descripcion {
+  grid-area: descrip;
+  font-size: 1rem;
+}
+.container-carrito .cont-carrito .cantidad {
+  grid-area: cant;
+  font-size: 1rem;
+}
+.container-carrito .cont-carrito .precio {
+  grid-area: precio;
+  font-size: 1rem;
+}
+.container-carrito .cont-carrito .descrip1 {
+  grid-area: descrip1;
+}
+.container-carrito .cont-carrito .descrip2 {
+  grid-area: descrip2;
+}
+.container-carrito .cont-carrito .descrip3 {
+  grid-area: descrip3;
+}
+.container-carrito .cont-carrito .cant1 {
+  grid-area: cant1;
+}
+.container-carrito .cont-carrito .cant2 {
+  grid-area: cant2;
+}
+.container-carrito .cont-carrito .cant3 {
+  grid-area: cant3;
+}
+.container-carrito .cont-carrito .precio1 {
+  grid-area: precio1;
+}
+.container-carrito .cont-carrito .precio2 {
+  grid-area: precio2;
+}
+.container-carrito .cont-carrito .precio3 {
+  grid-area: precio3;
+}
+.container-carrito .cont-carrito .img1 {
+  grid-area: img1;
+}
+.container-carrito .cont-carrito .img2 {
+  grid-area: img2;
+}
+.container-carrito .cont-carrito .img3 {
+  grid-area: img3;
+}
+.container-carrito .cont-carrito .img-c {
+  width: 10rem;
+  height: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .container-carrito .cont-carrito .descripcion, .container-carrito .cont-carrito .cantidad, .container-carrito .cont-carrito .precio {
+    font-size: 2rem;
+  }
+  .container-carrito .cont-carrito .img-c {
+    width: 30rem;
+    height: auto;
+  }
+  .container-carrito .cont-carrito .desc {
+    font-size: 2.5rem;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

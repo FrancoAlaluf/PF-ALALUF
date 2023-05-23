@@ -1,0 +1,91 @@
+.container-carrito {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: "tmenu"
+                         "contenido"
+                         "footer";
+    .cont-carrito {
+        grid-area: contenido;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: ".     descrip     cant       precio"
+                             "img1   descrip1    cant1      precio1"
+                             "img2   descrip2    cant2      precio2"
+                             "img3   descrip3    cant3      precio3"  ;
+        .descripcion{
+            grid-area: descrip;
+            font-size: 1rem;
+        }
+        .cantidad{
+            grid-area: cant;
+            font-size: 1rem;
+        }
+        .precio{
+            grid-area: precio;
+            font-size: 1rem;
+        }
+        .descrip1{
+            grid-area: descrip1;
+        }
+        .descrip2{
+            grid-area: descrip2;
+        }
+        .descrip3{
+            grid-area: descrip3;
+        }
+        .cant1{
+            grid-area: cant1;
+        }
+        .cant2{
+            grid-area: cant2;
+        }
+        .cant3{
+            grid-area: cant3;
+        }
+        .precio1{
+            grid-area: precio1;
+        }
+        .precio2{
+            grid-area: precio2;
+        }
+        .precio3{
+            grid-area: precio3;
+        }
+        .img1{
+            grid-area: img1;
+        }
+        .img2{
+            grid-area: img2;
+        }
+        .img3{
+            grid-area: img3;
+        }
+
+        .img-c {
+            width: 10rem;
+            height: auto;
+        }
+
+    }
+}
+
+
+@media screen and (min-width: 1024px){
+    .container-carrito{
+        .cont-carrito{
+            .descripcion, .cantidad ,.precio{
+                font-size: 2rem;
+            }
+            .img-c {
+                width: 30rem;
+                height: auto;
+            }
+            .desc {
+                font-size: 2.5rem;
+            
+            }
+        }
+    }
+}
